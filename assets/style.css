@@ -91,7 +91,12 @@ header .name {
 }
 .picture img {
   width: 100%;
+  height: auto;
+  max-width: 374px;
+  max-height: 400px;
+  object-fit: cover;
 }
+
 #about-me,
 .form-container {
   flex: 2;
@@ -222,6 +227,15 @@ input[type="submit"] {
   background-color: #beb45a;
   padding: 0.5em 1em;
 }
+
+/* Fix pour les images de la bannière */
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 500px; /* Limite la hauteur de l'image */
+}
+
 @media all and (max-width: 1180px) {
   .picture {
     flex: 2;
