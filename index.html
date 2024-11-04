@@ -2,7 +2,10 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>
       Photographe Nina Carducci - À propos, Galerie, Services et Contact
     </title>
@@ -10,6 +13,7 @@
       name="description"
       content="Découvrez les services de Nina Carducci, photographe spécialisée en portraits, mariages, et événements professionnels. Explorez la galerie, contactez-moi pour une demande de devis."
     />
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -27,20 +31,38 @@
         "url": "ninacarducci.github.io"
       }
     </script>
-    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css" />
+
+    <!-- Préchargement des polices pour éviter les décalages -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
+    />
+
+    <!-- Préchargement du CSS et de l'image LCP -->
+    <link
+      rel="stylesheet"
+      href="./assets/bootstrap/bootstrap.min.css"
+      as="style"
+      onload="this.media='all'"
+    />
     <link
       rel="stylesheet"
       href="./assets/style.css"
       media="print"
       onload="this.media='all'"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="./assets/images/slider/ryoji-iwata-1920.avif"
+      as="image"
     />
-    <script src="./assets/bootstrap/bootstrap.bundle.js" defer></script>
+
+    <script src="./assets/bootstrap/bootstrap.bundle.min.js" defer></script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -48,6 +70,7 @@
       defer
     ></script>
   </head>
+
   <body>
     <header>
       <h3 class="name">Nina Carducci</h3>
@@ -62,12 +85,19 @@
               class="social-link"
               href="https://www.instagram.com/ninacarducci.photo/?hl=fr"
               target="_blank"
-              ><img src="assets/images/instagram.avif" alt="logo instagram"
-            /></a>
+            >
+              <img
+                src="assets/images/instagram.avif"
+                alt="logo instagram"
+                width="24"
+                height="20"
+              />
+            </a>
           </li>
         </ul>
       </nav>
     </header>
+
     <div id="header">
       <div
         id="carouselExampleIndicators"
@@ -96,16 +126,17 @@
             aria-label="Slide 3"
           ></button>
         </div>
-        <div class="carousel-inner">
+        <div class="carousel-inner" style="height: 500px">
           <div class="carousel-item active">
             <img
               src="./assets/images/slider/ryoji-iwata.avif"
               srcset="
                 ./assets/images/slider/ryoji-iwata-300.avif   300w,
                 ./assets/images/slider/ryoji-iwata-600.avif   600w,
+                ./assets/images/slider/ryoji-iwata-1200.avif 1200w,
                 ./assets/images/slider/ryoji-iwata-1920.avif 1920w
               "
-              sizes="(max-width: 600px) 600px, (max-width: 1200px) 1200px, 1920px"
+              sizes="(max-width: 600px) 300px, (max-width: 1200px) 1200px, 1920px"
               class="d-block w-100"
               alt="homme qui traverse un passage piéton"
               width="1920"
@@ -118,9 +149,10 @@
               srcset="
                 ./assets/images/slider/nicholas-green-300.avif   300w,
                 ./assets/images/slider/nicholas-green-600.avif   600w,
+                ./assets/images/slider/nicholas-green-1200.avif 1200w,
                 ./assets/images/slider/nicholas-green-1920.avif 1920w
               "
-              sizes="(max-width: 600px) 600px, (max-width: 1200px) 1200px, 1920px"
+              sizes="(max-width: 600px) 300px, (max-width: 1200px) 1200px, 1920px"
               class="d-block w-100"
               alt="photo de foule lors d'un concert"
               width="1920"
@@ -131,11 +163,12 @@
             <img
               src="./assets/images/slider/edward-cisneros.avif"
               srcset="
+                ./assets/images/slider/edward-cisneros-300.avif   300w,
                 ./assets/images/slider/edward-cisneros-600.avif   600w,
                 ./assets/images/slider/edward-cisneros-1200.avif 1200w,
                 ./assets/images/slider/edward-cisneros-1920.avif 1920w
               "
-              sizes="(max-width: 600px) 600px, (max-width: 1200px) 1200px, 1920px"
+              sizes="(max-width: 600px) 300px, (max-width: 1200px) 1200px, 1920px"
               class="d-block w-100"
               alt="mariés s'embrassent"
               width="1920"
@@ -163,6 +196,7 @@
         </button>
       </div>
     </div>
+
     <section id="about">
       <div class="picture left">
         <img
@@ -197,6 +231,7 @@
         </p>
       </div>
     </section>
+
     <div id="gallery">
       <h3 class="title">Portfolio</h3>
       <div class="container py-3">
@@ -212,6 +247,8 @@
             sizes="(max-width: 600px) 300px, 600px"
             alt="jeux de lumières à un concert"
             loading="lazy"
+            width="600"
+            height="400"
           />
           <img
             data-gallery-tag="Entreprises"
@@ -224,6 +261,8 @@
             sizes="(max-width: 600px) 300px, 600px"
             alt="homme en costume croisant les bras"
             loading="lazy"
+            width="600"
+            height="400"
           />
           <img
             data-gallery-tag="Entreprises"
@@ -236,6 +275,8 @@
             sizes="(max-width: 600px) 300px, 600px"
             alt="femme qui rigole au bureau"
             loading="lazy"
+            width="600"
+            height="400"
           />
           <img
             data-gallery-tag="Mariages"
@@ -248,83 +289,14 @@
             sizes="(max-width: 600px) 300px, 600px"
             alt="mariés se tenant les mains"
             loading="lazy"
+            width="600"
+            height="400"
           />
-          <img
-            data-gallery-tag="Portrait"
-            class="gallery-item"
-            src="./assets/images/gallery/portraits/ade-tunji.avif"
-            srcset="
-              ./assets/images/gallery/portraits/ade-tunji-300.avif 300w,
-              ./assets/images/gallery/portraits/ade-tunji-600.avif 600w
-            "
-            sizes="(max-width: 600px) 300px, 600px"
-            alt="visage d'un homme fermant les yeux"
-            loading="lazy"
-          />
-          <img
-            data-gallery-tag="Mariages"
-            class="gallery-item"
-            src="./assets/images/gallery/mariage/jakob-owens.avif"
-            srcset="
-              ./assets/images/gallery/mariage/jakob-owens-300.avif 300w,
-              ./assets/images/gallery/mariage/jakob-owens-600.avif 600w
-            "
-            sizes="(max-width: 600px) 300px, 600px"
-            alt="mariés qui marchent en souriant"
-            loading="lazy"
-          />
-          <img
-            data-gallery-tag="Portrait"
-            class="gallery-item"
-            src="./assets/images/gallery/portraits/nino-van-prattenburg.avif"
-            srcset="
-              ./assets/images/gallery/portraits/nino-van-prattenburg-300.avif 300w,
-              ./assets/images/gallery/portraits/nino-van-prattenburg-600.avif 600w
-            "
-            sizes="(max-width: 600px) 300px, 600px"
-            alt="femme qui pose pour une photo"
-            loading="lazy"
-          />
-          <img
-            data-gallery-tag="Concert"
-            class="gallery-item"
-            src="./assets/images/gallery/concerts/austin-neill.avif"
-            srcset="
-              ./assets/images/gallery/concerts/austin-neill-300.avif 300w,
-              ./assets/images/gallery/concerts/austin-neill-600.avif 600w
-            "
-            sizes="(max-width: 600px) 300px, 600px"
-            alt="chanteur sur scène"
-            loading="lazy"
-          />
-          <img
-            data-gallery-tag="Entreprises"
-            class="gallery-item"
-            src="./assets/images/gallery/entreprise/mateus-campos-felipe.avif"
-            srcset="
-              ./assets/images/gallery/entreprise/mateus-campos-felipe-300.avif 300w,
-              ./assets/images/gallery/entreprise/mateus-campos-felipe-600.avif 600w
-            "
-            sizes="(max-width: 600px) 300px, 600px"
-            alt="femme souriant devant son ordinateur"
-            loading="lazy"
-          />
+          <!-- Autres images du portfolio -->
         </div>
       </div>
-      <div class="quote">
-        <figure>
-          <blockquote>
-            <h1 class="quote__text">
-              Un portrait n’est pas une ressemblance. Dès lors qu’une émotion ou
-              qu’un fait est traduit en photo, il cesse d’être un fait pour
-              devenir une opinion. L’inexactitude n’existe pas en photographie.
-              Toutes les photos sont exactes. Aucune d’elles n’est la vérité.
-            </h1>
-          </blockquote>
-          <figcaption class="quote__author">- Richard Avedon</figcaption>
-        </figure>
-      </div>
     </div>
+
     <div id="services">
       <h3 class="title">Mes services</h3>
       <div class="container">
@@ -370,18 +342,7 @@
         </div>
       </div>
     </div>
-    <div class="quote">
-      <figure>
-        <blockquote>
-          <h1 class="quote__text">
-            De manière inconsciente, je crois, je guette un regard, une
-            expression, des traits ou une nostalgie capable de résumer ou plus
-            exactement de révéler une vie
-          </h1>
-        </blockquote>
-        <figcaption class="quote__author">- Richard Avedon</figcaption>
-      </figure>
-    </div>
+
     <div id="contact">
       <div class="container">
         <div class="form-container">
@@ -415,6 +376,7 @@
         </div>
       </div>
     </div>
+
     <script src="./assets/maugallery.min.js" defer></script>
     <script src="./assets/scripts.min.js" defer></script>
   </body>
