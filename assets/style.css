@@ -235,7 +235,7 @@ input[type="submit"] {
 
 .carousel-inner {
   width: 100%;
-  aspect-ratio: 16 / 4;
+
   max-height: 80vh;
   object-fit: cover;
 }
