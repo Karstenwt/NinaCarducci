@@ -228,7 +228,6 @@ input[type="submit"] {
 }
 /* Fix pour les images de la bannière */
 .carousel-inner {
-  height: 500px;
   width: 100%;
 }
 .carousel-inner img {
@@ -306,6 +305,16 @@ input[type="submit"] {
   }
 }
 @media all and (max-width: 650px) {
+  body {
+    max-width: 1920px;
+    margin: auto;
+    overflow-x: hidden;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh; /* Assure une hauteur minimale */
+  }
   header {
     flex-direction: column;
     padding-inline: 0;
