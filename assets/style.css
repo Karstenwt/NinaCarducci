@@ -233,7 +233,12 @@ input[type="submit"] {
 /* Fix pour les images de la bannière */
 .carousel-inner {
   width: 100%;
+  width: 100%;
+  aspect-ratio: 16 / 4; /* Choisis le rapport qui convient à l'aspect désiré */
+  max-height: 80vh; /* Limite la hauteur sur les écrans très grands */
+  object-fit: cover; /* Assure que l’image s’adapte bien */
 }
+
 .carousel-inner img {
   width: 100%;
   height: auto;
