@@ -230,25 +230,26 @@ input[type="submit"] {
   background-color: #beb45a;
   padding: 0.5em 1em;
 }
-/* Fix pour les images de la bannière */
+
 .carousel-inner {
   width: 100%;
   width: 100%;
-  aspect-ratio: 16 / 4; /* Choisis le rapport qui convient à l'aspect désiré */
-  max-height: 80vh; /* Limite la hauteur sur les écrans très grands */
-  object-fit: cover; /* Assure que l’image s’adapte bien */
+  aspect-ratio: 16 / 4;
+  max-height: 80vh;
+  object-fit: cover;
 }
 
 .carousel-inner img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  max-height: 500px; /* Limite la hauteur de l'image */
+  max-height: 500px;
 }
 
 @media all and (max-width: 1180px) {
   .picture {
     flex: 2;
+    margin-top: 40px;
   }
   #about,
   #contact .container {
@@ -280,6 +281,9 @@ input[type="submit"] {
   }
   .picture {
     width: 50%;
+  }
+  .picture left {
+    margin-top: 10px;
   }
   .picture.left::before {
     bottom: auto;
