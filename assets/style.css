@@ -46,10 +46,14 @@ header {
 body {
   max-width: 1920px;
   margin: auto;
+  overflow-x: hidden;
 }
 * {
   font-family: Inter;
   font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 header {
   position: sticky;
@@ -228,7 +232,6 @@ input[type="submit"] {
 }
 /* Fix pour les images de la bannière */
 .carousel-inner {
-  height: 500px;
   width: 100%;
 }
 .carousel-inner img {
@@ -245,6 +248,7 @@ input[type="submit"] {
   #about,
   #contact .container {
     align-items: center;
+    padding: 0px;
   }
   .about-me__title {
     margin-top: 0;
@@ -267,6 +271,7 @@ input[type="submit"] {
   #contact .container,
   #services .container {
     flex-direction: column;
+    padding: 0;
   }
   .picture {
     width: 50%;
@@ -309,6 +314,7 @@ input[type="submit"] {
   header {
     flex-direction: column;
     padding-inline: 0;
+    padding-block: 10px;
   }
   header .nav,
   header .nav ul {
