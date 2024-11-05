@@ -48,6 +48,7 @@
       rel="stylesheet"
       href="./assets/bootstrap/bootstrap.min.css"
       as="style"
+      media="print"
       onload="this.media='all'"
     />
     <link
@@ -58,11 +59,15 @@
     />
     <link
       rel="preload"
-      href="./assets/images/slider/ryoji-iwata-1920.avif"
+      href="./assets/images/slider/ryoji-iwata-600.avif"
       as="image"
     />
 
-    <script src="./assets/bootstrap/bootstrap.bundle.min.js" defer></script>
+    <script
+      type="module"
+      src="./assets/bootstrap/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -129,23 +134,26 @@
         <div class="carousel-inner" style="height: 500px">
           <div class="carousel-item active">
             <img
-              src="./assets/images/slider/ryoji-iwata.avif"
+              src="./assets/images/slider/ryoji-iwata-600.avif"
               srcset="
                 ./assets/images/slider/ryoji-iwata-300.avif   300w,
+                ./assets/images/slider/ryoji-iwata-450.avif   450w,
                 ./assets/images/slider/ryoji-iwata-600.avif   600w,
+                ./assets/images/slider/ryoji-iwata-1000.avif 1000w,
                 ./assets/images/slider/ryoji-iwata-1200.avif 1200w,
                 ./assets/images/slider/ryoji-iwata-1920.avif 1920w
               "
-              sizes="(max-width: 600px) 300px, (max-width: 1200px) 1200px, 1920px"
-              class="d-block w-100"
+              sizes="(max-width: 412px) 300px, (max-width: 768px) 600px, (max-width: 1200px) 1000px, 1920px"
+              class="d-block w-100 no-lazy"
               alt="homme qui traverse un passage piéton"
               width="1920"
               height="500"
+              fetchpriority="high"
             />
           </div>
           <div class="carousel-item">
             <img
-              src="./assets/images/slider/nicholas-green.avif"
+              src="./assets/images/slider/nicholas-green-600.avif"
               srcset="
                 ./assets/images/slider/nicholas-green-300.avif   300w,
                 ./assets/images/slider/nicholas-green-600.avif   600w,
@@ -157,11 +165,12 @@
               alt="photo de foule lors d'un concert"
               width="1920"
               height="500"
+              loading="lazy"
             />
           </div>
           <div class="carousel-item">
             <img
-              src="./assets/images/slider/edward-cisneros.avif"
+              src="./assets/images/slider/edward-cisneros-600.avif"
               srcset="
                 ./assets/images/slider/edward-cisneros-300.avif   300w,
                 ./assets/images/slider/edward-cisneros-600.avif   600w,
@@ -173,6 +182,7 @@
               alt="mariés s'embrassent"
               width="1920"
               height="500"
+              loading="lazy"
             />
           </div>
         </div>
@@ -207,7 +217,6 @@
           "
           sizes="(max-width: 600px) 374px, 600px"
           alt="photographe Nina Carducci"
-          loading="lazy"
           width="374"
           height="400"
         />
@@ -292,7 +301,62 @@
             width="600"
             height="400"
           />
-          <!-- Autres images du portfolio -->
+          <img
+            data-gallery-tag="Portrait"
+            class="gallery-item"
+            src="./assets/images/gallery/portraits/ade-tunji.avif"
+            srcset="
+              ./assets/images/gallery/portraits/ade-tunji-300.avif 300w,
+              ./assets/images/gallery/portraits/ade-tunji-600.avif 600w
+            "
+            sizes="(max-width: 600px) 300px, 600px"
+            alt="visage d'un homme fermant les yeux"
+            loading="lazy"
+            width="600"
+            height="400"
+          />
+          <img
+            data-gallery-tag="Mariages"
+            class="gallery-item"
+            src="./assets/images/gallery/mariage/jakob-owens.avif"
+            srcset="
+              ./assets/images/gallery/mariage/jakob-owens-300.avif 300w,
+              ./assets/images/gallery/mariage/jakob-owens-600.avif 600w
+            "
+            sizes="(max-width: 600px) 300px, 600px"
+            alt="mariés qui marchent en souriant"
+            loading="lazy"
+            width="600"
+            height="400"
+          />
+          <img
+            data-gallery-tag="Portrait"
+            class="gallery-item"
+            src="./assets/images/gallery/portraits/nino-van-prattenburg.avif"
+            srcset="
+              ./assets/images/gallery/portraits/nino-van-prattenburg-300.avif 300w,
+              ./assets/images/gallery/portraits/nino-van-prattenburg-600.avif 600w
+            "
+            sizes="(max-width: 600px) 300px, 600px"
+            alt="femme qui pose pour une photo"
+            loading="lazy"
+            width="600"
+            height="400"
+          />
+          <img
+            data-gallery-tag="Concert"
+            class="gallery-item"
+            src="./assets/images/gallery/concerts/austin-neill.avif"
+            srcset="
+              ./assets/images/gallery/concerts/austin-neill-300.avif 300w,
+              ./assets/images/gallery/concerts/austin-neill-600.avif 600w
+            "
+            sizes="(max-width: 600px) 300px, 600px"
+            alt="chanteur sur scène"
+            loading="lazy"
+            width="600"
+            height="400"
+          />
         </div>
       </div>
     </div>
@@ -352,9 +416,9 @@
           </p>
           <form action="" method="post">
             <label>Nom</label>
-            <input type="text" name="nom" id="nom" />
+            <input type="text" name="nom" id="nom" autocomplete="name" />
             <label>Email</label>
-            <input type="email" name="email" id="email" />
+            <input type="email" name="email" id="email" autocomplete="email" />
             <label>Message</label>
             <textarea
               name="message"
@@ -376,7 +440,7 @@
         </div>
       </div>
     </div>
-
+    <script src="./assets/js/lazyLoad.js" defer></script>
     <script src="./assets/maugallery.min.js" defer></script>
     <script src="./assets/scripts.min.js" defer></script>
   </body>
