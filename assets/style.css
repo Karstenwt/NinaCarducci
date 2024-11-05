@@ -317,15 +317,33 @@ input[type="submit"] {
 }
 @media all and (max-width: 650px) {
   body {
-    max-width: 1920px;
-    margin: auto;
+    min-height: 100vh;
+    margin: 0 auto;
     overflow-x: hidden;
 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    min-height: 100vh; /* Assure une hauteur minimale */
   }
+  #carouselExampleIndicators {
+    width: 100%;
+    min-height: 300px; /* Assure une taille de base pour le carrousel */
+    overflow: hidden;
+  }
+  h3.name {
+    font-size: 1.5rem; /* Ajuste la taille de police pour mobile */
+    min-height: 2em; /* Assure une hauteur minimale pour éviter les décalages */
+    line-height: 1.2;
+    margin: 0.5em 0;
+  }
+
+  #carouselExampleIndicators img {
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* Limite la hauteur des images pour éviter les décalages */
+    object-fit: cover;
+  }
+}
   header {
     flex-direction: column;
     padding-inline: 0;
