@@ -33,10 +33,6 @@ header {
   z-index: -1;
   position: absolute;
 }
-#about, #contact, #services {
-  min-height: 500px;
-  padding-inline: 100px;
-  padding-block: 100px;}
 #about,
 #contact .container,
 .mg-next,
@@ -89,10 +85,6 @@ header .name {
   background-color: #e5975f;
   left: 0;
 }
-.P{
-  min-height:24px;
-  max-width 80ch;
-}
 .picture {
   flex: 1;
   margin: 0 20px;
@@ -109,7 +101,6 @@ header .name {
 .form-container {
   flex: 2;
 }
-
 .about-me__title {
   margin-top: 1em;
   margin-bottom: 60px;
@@ -238,8 +229,6 @@ input[type="submit"] {
 /* Fix pour les images de la bannière */
 .carousel-inner {
   width: 100%;
-  height: auto;
-  max-height: 500;
 }
 .carousel-inner img {
   width: 100%;
@@ -317,33 +306,15 @@ input[type="submit"] {
 }
 @media all and (max-width: 650px) {
   body {
-    min-height: 100vh;
-    margin: 0 auto;
+    max-width: 1920px;
+    margin: auto;
     overflow-x: hidden;
 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    min-height: 100vh; /* Assure une hauteur minimale */
   }
-  #carouselExampleIndicators {
-    width: 100%;
-    min-height: 300px; /* Assure une taille de base pour le carrousel */
-    overflow: hidden;
-  }
-  h3.name {
-    font-size: 1.5rem; /* Ajuste la taille de police pour mobile */
-    min-height: 2em; /* Assure une hauteur minimale pour éviter les décalages */
-    line-height: 1.2;
-    margin: 0.5em 0;
-  }
-
-  #carouselExampleIndicators img {
-    width: 100%;
-    height: auto;
-    max-height: 300px; /* Limite la hauteur des images pour éviter les décalages */
-    object-fit: cover;
-  }
-}
   header {
     flex-direction: column;
     padding-inline: 0;
