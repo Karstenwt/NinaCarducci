@@ -23,6 +23,7 @@ header {
   position: relative;
   padding-inline: 100px;
   padding-block: 100px;
+  min-height: 600px; /* Ajout d'une hauteur minimale pour éviter les décalages */
 }
 .picture.left::before,
 .picture.right::before {
@@ -46,10 +47,13 @@ header {
 body {
   max-width: 1920px;
   margin: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 * {
   font-family: Inter;
   font-style: normal;
+  font-display: swap;
 }
 header {
   position: sticky;
@@ -68,9 +72,11 @@ header .name {
   list-style-type: none;
   font-size: 14px;
   margin-bottom: 0;
+  display: flex;
+  justify-content: flex-end; /* Maintient la nav sur la droite */
 }
 .nav li {
-  padding-inline: 10px;
+  padding-inline: 15px; /* Ajustement de l'espacement */
 }
 .nav a {
   text-decoration: none;
@@ -178,6 +184,7 @@ form textarea {
   margin: auto;
   background-color: #a8d5d8;
   position: relative;
+  min-height: 600px; /* Hauteur minimale ajoutée */
 }
 #services .container::before {
   content: " ";
@@ -231,6 +238,8 @@ input[type="submit"] {
 
 .carousel-inner {
   width: 100%;
+  max-height: 500px;
+  overflow: hidden; /* Empêche les débordements */
 }
 .carousel-inner img {
   width: 100%;
@@ -311,7 +320,6 @@ input[type="submit"] {
     max-width: 1920px;
     margin: auto;
     overflow-x: hidden;
-
     margin: 0;
     padding: 0;
     box-sizing: border-box;
