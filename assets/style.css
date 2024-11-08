@@ -13,6 +13,18 @@
 .quote__text {
   font-family: Spectral;
 }
+.quote p {
+  font-size: 1.5em;
+  color: #333;
+  margin: 0;
+  font-family: "Spectral", serif;
+  font-style: italic;
+}
+.quote__author {
+  font-weight: 800;
+  font-size: 22px;
+}
+
 .service,
 header {
   background-color: #fff;
@@ -23,7 +35,7 @@ header {
   position: relative;
   padding-inline: 100px;
   padding-block: 100px;
-  min-height: 600px; /* Ajout d'une hauteur minimale pour éviter les décalages */
+  min-height: 600px;
 }
 .picture.left::before,
 .picture.right::before {
@@ -48,7 +60,6 @@ body {
   max-width: 1920px;
   margin: auto;
   min-height: 100vh;
-  overflow-x: hidden;
 }
 * {
   font-family: Inter;
@@ -73,10 +84,10 @@ header .name {
   font-size: 14px;
   margin-bottom: 0;
   display: flex;
-  justify-content: flex-end; /* Maintient la nav sur la droite */
+  justify-content: flex-end;
 }
 .nav li {
-  padding-inline: 15px; /* Ajustement de l'espacement */
+  padding-inline: 15px;
 }
 .nav a {
   text-decoration: none;
@@ -168,8 +179,13 @@ form textarea {
   border: 1px solid;
   margin-bottom: 20px;
 }
+.quote-section {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 .quote {
-  width: 70%;
+  width: 60%;
   margin: auto;
   padding-block: 3em;
 }
@@ -180,11 +196,14 @@ form textarea {
   font-weight: 800;
   font-size: 22px;
 }
+.figcaption {
+  display: block;
+}
 #services {
   margin: auto;
   background-color: #a8d5d8;
   position: relative;
-  min-height: 600px; /* Hauteur minimale ajoutée */
+  min-height: 600px;
 }
 #services .container::before {
   content: " ";
@@ -235,11 +254,10 @@ input[type="submit"] {
   background-color: #beb45a;
   padding: 0.5em 1em;
 }
-
 .carousel-inner {
   width: 100%;
   max-height: 500px;
-  overflow: hidden; /* Empêche les débordements */
+  overflow: hidden;
 }
 .carousel-inner img {
   width: 100%;
@@ -247,7 +265,6 @@ input[type="submit"] {
   object-fit: cover;
   max-height: 500px;
 }
-
 @media all and (max-width: 1180px) {
   .picture {
     flex: 2;
@@ -353,11 +370,13 @@ input[type="submit"] {
   #contact {
     padding-inline: 2em;
     padding-block: 2em;
+    min-height: 600px;
   }
   form {
     width: 100%;
   }
   .picture {
     width: 80%;
+    min-height: 200px;
   }
 }
