@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Inter";
+  src: url("https://fonts.gstatic.com/s/inter/v3/Inter-roman.woff2")
+    format("woff2");
+  font-display: swap;
+}
+
 .nav a,
 .nav-pills .nav-link {
   color: #000;
